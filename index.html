@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+
+    <style>
+
+        body{
+            font-family: sans-serif;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+       }
+
+       .fa {
+           padding-left: 10px;
+       }
+
+        .main-heading{
+            font-size: 50px;
+            font-weight: lighter;
+            display: flex;
+            align-items: center;
+            color: white;
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="outerdiv">
+        <div class="innerdiv">
+            <h1 class="main-heading">
+                I am Thermometer <span id="temp" class="fa "></span>
+            </h1>
+        </div>
+    </div>
+
+    <script>
+
+        const tempLoad = () => {
+            let temp = document.getElementById('temp');
+            temp.innerHTML = "&#xf2cb";
+            temp.style.color = "#f8b627";
+
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2ca";
+                temp.style.color = "#f8b627";
+            },1000);
+
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c9";
+            },2000);
+
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c8";
+            },3000);
+
+            setTimeout(() => {
+                temp.innerHTML = "&#xf2c7";
+                temp.style.color = "#d63031";
+            },4000);
+
+        }
+
+        tempLoad();
+
+        setInterval(tempLoad, 5000)
+
+    </script>
+</body>
+</html>
